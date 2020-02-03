@@ -23,7 +23,7 @@ const AppRouter = ({ isLoggendIn }) => (
 );
 
 AppRouter.propTypes = {
-  isLoggendIn: PropTypes.bool.isRequired
+  isLoggedIn: PropTypes.bool.isRequired
 };
 
 export default AppRouter;
