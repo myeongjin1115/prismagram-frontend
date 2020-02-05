@@ -92,7 +92,7 @@ export default () => {
             throw Error("");
           }
         } catch {
-          toast.error("Cant confirm secret,check again");
+          toast.error("Can't confirm secret,check again");
         }
       }
     }
