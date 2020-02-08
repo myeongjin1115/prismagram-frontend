@@ -28,12 +28,12 @@ const PostContainer = ({
   });
   useEffect(() => {
     const totalFiles = files.length;
-    if(currentItem === totalFiles-1){
-        setTimeout(() => setCurrentItem(0), 3000);
-    }else {
-        setTimeout(() => setCurrentItem(currentItem + 1), 3000);
+    if (currentItem === totalFiles - 1) {
+      setTimeout(() => setCurrentItem(0), 3000);
+    } else {
+      setTimeout(() => setCurrentItem(currentItem + 1), 3000);
     }
-}, [currentItem, files]); 
+  }, [currentItem, files]);
 
   const toggleLike = () => {
     toggleLikeMutation();
@@ -44,6 +44,15 @@ const PostContainer = ({
       setIsLiked(true);
       setLikeCount(likeCountS + 1);
     }
+  };
+
+  const onKeyPress = e => {
+    const { keyCode } = e;
+    if (keyCode === 13) {
+      comment.setValue("");
+      // addCommentMutation();
+    }
+    return;
   };
 
   return (
@@ -61,6 +70,7 @@ const PostContainer = ({
       setLikeCount={setLikeCount}
       currentItem={currentItem}
       toggleLike={toggleLike}
+      onKeyPress={onKeyPress}
     />
   );
 };
